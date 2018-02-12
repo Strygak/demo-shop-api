@@ -4,8 +4,8 @@ const jwt = require('jsonwebtoken');
 const passport = require('../config/passport_config');
 const config = require('../config/index');
 
-function generateJWT(_id) {
-	return jwt.sign({ id: _id }, config.secret, { expiresIn: 86400 });
+function generateJWT(id) {
+	return jwt.sign({ id: id }, config.secret, { expiresIn: 86400 });
 }
 
 exports.registerUser = (req, res) => {

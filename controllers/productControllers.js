@@ -47,7 +47,7 @@ exports.deleteProduct = (req, res) => {
 
 exports.updateProduct = (req, res) => {
   Product.findOneAndUpdate({ _id: req.params.id, owner_id: req.userId }, 
-                           { $set: { title: req.body.title, price: req.body.price }}, 
+                           { $set: { title: req.body.title, price: req.body.price, discount: req.body.discount }}, 
     { new: true }, (err, doc) => {
       if (err) {
         return res.status(500).send("There was a problem of updating the product.");

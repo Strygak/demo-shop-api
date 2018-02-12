@@ -9,7 +9,7 @@ exports.getAllProducts = (req, res) => {
   });
 }
 
-exports.createProduct = (req, res) =>{
+exports.createProduct = (req, res) => {
   Product.create({
     title: req.body.title,
     price: req.body.price,
@@ -36,21 +36,16 @@ exports.deleteProduct = (req, res) => {
 }
 
 exports.updateProduct = (req, res) => {
-  Product.findOne({ _id: req.params.id }, (err, product) => {
-    if (err) {
-      return res.status(500).send("There was a problem to find the product.");
-    }
-    
-    if (product.owner_id === req.userId) {
-      Product.findByIdAndUpdate(req.params.id, { $set: { title: req.body.title, price: req.body.price }}, 
-        { new: true }, (err, doc) => {
-          if (err) {
-            return res.status(500).send("There was a problem of updating the product.");
-          }
-          res.status(200).send({ message: 'Product was updated' });
-      });
-    } else {
-      res.send({ message: 'You are not owner of this product' });
-    }
-	});
+  Product.findOneAndUpdate({ _id: req.params.id, owner_id: req.userId }, 
+                           { $set: { title: req.body.title, price: req.body.price }}, 
+    { new: true }, (err, doc) => {
+      if (err) {
+        return res.status(500).send("There was a problem of updating the product.");
+      }
+
+      if (!doc) {
+        return res.send({ message: 'You are not owner of this product' });
+      }
+      res.status(200).send({ message: 'Product was updated' });
+  });
 }

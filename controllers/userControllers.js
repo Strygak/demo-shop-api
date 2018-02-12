@@ -1,23 +1,18 @@
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const generateJWT = require('../services/generateJWT');
 const passport = require('../config/passport_config');
-const config = require('../config/index');
-
-function generateJWT(id) {
-	return jwt.sign({ id: id }, config.secret, { expiresIn: 86400 });
-}
 
 exports.registerUser = (req, res) => {
-	const hashedPassword = bcrypt.hashSync(req.body.password, 8);
-	User.create({ name: req.body.name,
-		            email: req.body.email,
-		            password: hashedPassword }, (err, user) => {
-		if (err) { 
-			return res.status(500).send("There was a problem registering the user.");
-		}
-		res.status(200).send({ auth: true, token: generateJWT(user._id) });
-	}); 
+  const hashedPassword = bcrypt.hashSync(req.body.password, 8);
+  User.create({ name: req.body.name,
+		email: req.body.email,
+		password: hashedPassword }, (err, user) => {
+    if (err) { 
+      return res.status(500).send("There was a problem registering the user.");
+    }
+    res.status(200).send({ auth: true, token: generateJWT(user._id) });
+  }); 
 };
 
 exports.loginUser = (req, res) => {

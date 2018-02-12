@@ -9,11 +9,21 @@ exports.getAllProducts = (req, res) => {
   });
 }
 
+exports.getProductsWithDiscount = (req, res) => {
+  Product.find({ discount: true }, (err, products) => {
+    if (err) {
+      return res.status(500).send("There was a problem.");
+    }
+    res.json(products);
+  });
+};
+
 exports.createProduct = (req, res) => {
   Product.create({
     title: req.body.title,
     price: req.body.price,
-    owner_id: req.userId
+    owner_id: req.userId,
+    discount: req.body.discount
   }, (err, product) => {
     if (err) { 
       return res.status(500).send("There was a problem of registering the product.");

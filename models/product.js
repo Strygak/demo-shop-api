@@ -8,7 +8,10 @@ const productShema = mongoose.Schema({
 		type: Boolean,
 		default: false
 	},
-	create: { type: Date, default: Date.now } 
+	create: { 
+		type: Date, 
+		default: Date.now 
+	} 
 })
 
 const product = mongoose.model('Product', productShema)

@@ -4,6 +4,10 @@ const productShema = mongoose.Schema({
 	title: String,
 	price: Number,
 	owner_id: String,
+	discount: {
+		type: Boolean,
+		default: false
+	},
 	create: { type: Date, default: Date.now } 
 })
 

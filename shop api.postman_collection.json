@@ -1,0 +1,369 @@
+{
+	"id": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+	"name": "shop api",
+	"description": "",
+	"order": [
+		"0612e6aa-5190-55d8-1f7a-9a656dd9ef54",
+		"6eff29ba-73bc-8908-6d29-961607972cde",
+		"4686fda9-9744-9572-f9da-2ddc54b2bc60",
+		"cb9fe381-75a2-456c-c1f5-d8e1a1a21b18",
+		"bcdb1eee-d21d-d973-2376-056a4ca75cc1",
+		"ca786689-bbb2-f90f-dee4-ac09e0f792eb",
+		"64d84078-e830-df1d-3d2c-2c7c9e82a826",
+		"65a7a088-abdb-eba8-7449-996cc8c80f9e",
+		"68d81539-85ee-f454-ec79-697fd11468d6"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1518185731343,
+	"owner": "433416",
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header"
+			}
+		]
+	},
+	"requests": [
+		{
+			"id": "0612e6aa-5190-55d8-1f7a-9a656dd9ef54",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/auth/register",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Roman",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "roman@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "1234qwer",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1518185864867,
+			"name": "register",
+			"description": "",
+			"collectionId": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "4686fda9-9744-9572-f9da-2ddc54b2bc60",
+			"headers": "x-access-token: token\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "x-access-token",
+					"value": "token",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/products",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "title",
+					"value": "smartphone",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "price",
+					"value": "100",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "discount",
+					"value": "true",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1518442113733,
+			"name": "create product",
+			"description": "",
+			"collectionId": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "64d84078-e830-df1d-3d2c-2c7c9e82a826",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/discount",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [],
+			"auth": null,
+			"method": "GET",
+			"collectionId": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+			"data": null,
+			"dataMode": "params",
+			"name": "get products with discount",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1518440173256,
+			"version": 2,
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "65a7a088-abdb-eba8-7449-996cc8c80f9e",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/auth/google",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [],
+			"auth": null,
+			"method": "GET",
+			"collectionId": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+			"data": null,
+			"dataMode": "params",
+			"name": "google auth",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1518186476402,
+			"version": 2,
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "68d81539-85ee-f454-ec79-697fd11468d6",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/auth/facebook",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [],
+			"auth": null,
+			"method": "GET",
+			"collectionId": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+			"data": null,
+			"dataMode": "params",
+			"name": "facebook auth",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1518186498357,
+			"version": 2,
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "6eff29ba-73bc-8908-6d29-961607972cde",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/auth/login",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "roman@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "1234qwer",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1518187287714,
+			"name": "login",
+			"description": "",
+			"collectionId": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "bcdb1eee-d21d-d973-2376-056a4ca75cc1",
+			"headers": "x-access-token: token\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "x-access-token",
+					"value": "token",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/products/id",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1518442135220,
+			"name": "delete product",
+			"description": "",
+			"collectionId": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "ca786689-bbb2-f90f-dee4-ac09e0f792eb",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [],
+			"auth": null,
+			"method": "GET",
+			"collectionId": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+			"data": null,
+			"dataMode": "params",
+			"name": "get all proucts",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1518186445505,
+			"version": 2,
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "cb9fe381-75a2-456c-c1f5-d8e1a1a21b18",
+			"headers": "x-access-token: token\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "x-access-token",
+					"value": "token",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/products/id",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"key": "title",
+					"value": "laptop",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "price",
+					"value": "13",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"auth": null,
+			"time": 1518442124775,
+			"name": "update product",
+			"description": "",
+			"collectionId": "359c72a4-e9bb-7f2d-fd0a-f0cb65c1463c",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}

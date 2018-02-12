@@ -14,8 +14,6 @@ router.get('/facebook', passport.authenticate('facebook'));
 router.get('/facebook/callback', passport.authenticate('facebook', 
                               { failureRedirect: '/login' }), userController.facebookOAuth);
 
-router.get('/logout', (req, res) => {
-  res.status(200).send({ auth: false, token: null });
-});
+router.get('/logout', (req, res) => { res.status(200).send({ auth: false, token: null });});
 
 module.exports = router;

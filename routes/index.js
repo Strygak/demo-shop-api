@@ -4,6 +4,7 @@ const productControllers = require('../controllers/productControllers');
 const verifyToken = require('../services/verifyToken');
 
 router.get('/', productControllers.getAllProducts);
+router.get('/discount', productControllers.getProductsWithDiscount);
 router.post('/products', verifyToken, productControllers.createProduct);
 router.put('/products/:id', verifyToken, productControllers.updateProduct);
 router.delete('/products/:id', verifyToken, productControllers.deleteProduct);
